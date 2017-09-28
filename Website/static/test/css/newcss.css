@@ -1,0 +1,210 @@
+.myform-control{
+    height:30px;
+    margin-right:5px;
+}
+
+.rpl_btn{
+    display:inline;
+    /*max-width:80px;*/
+    padding: 5px 6px;
+    border: solid 1px;
+    border-radius: 0.5px;
+}
+
+
+/*
+changed by PengJieqi*/
+a{
+    text-decoration: none;
+}
+
+
+.mysidebar{
+    /*background:*//*#71e48a*//*#66FF99;*/
+    /*background-color:#4a4740;*/
+    background-color:#66FF99;
+    max-width:159px;
+    min-width:154px;
+    width:15%;
+    height:1000px;
+    float:left;
+    top:40px;
+    position:fixed;
+    z-index:999;
+
+}
+
+.mysidebar ul{
+    padding:0;
+}
+
+.mysidebar li a{
+    text-decoration: none;
+}
+
+.mysidebar .myactive{
+    border: solid #ccc;
+    border-width: 1px 0 1px 0;
+}
+
+.mysidebar li{
+    padding:0 25px;
+    width:100%;
+    height:50px;
+    list-style:none;
+    line-height:50px;
+}
+
+/*
+.mysidebar li:hover{
+    background-color:#67f186;
+   */
+/*background-color:#858585;*//*
+
+    color:white;
+}
+*/
+
+.mysidebar li:active{
+    border:1px solid #e8e8e8;
+}
+
+/*.timeline-content .panel-body .col-lg-12 .panel{
+    background-color:#76f592;
+}*/
+.panel-heading{
+    /*background-color:#4a4740;
+    color:white;*/
+    background-color:#76f592;
+    color:#333;
+}
+
+.timeline-content .panel-body{
+    background-color:#eee;
+}
+
+
+.mycontent{
+    background:white;
+    width:85%;
+    margin-left:15%;
+    min-height: 1000px;
+    margin-top:40px;
+
+}
+
+@media screen and (max-width: 950px) {
+    .mysidebar {
+        display:none;
+    }
+    .mycontent{
+        width: 100%;
+        margin-left:2%;
+    }
+
+}
+
+.col-md-13{
+    float:left;
+    position:relative;
+    min-height:1px;
+    padding-left:15px;
+    padding-right:15px;
+    width:150px;
+    font-size:17px
+}
+
+/*HuZY*/
+
+.col-md-14{
+    float:left;
+    position:relative;
+    min-height:1px;
+    padding-left:15px;
+    padding-right:30px;
+    max-width:400px
+}
+/*HuZY*/
+
+.pagnation{
+    float:left;
+    margin-left: 400px;
+    margin-top: 0px;
+}
+
+@media screen and (max-width: 768px) {
+    .col-md-13{
+        text-align: center;
+        width：100%;
+    }
+    .col-md-14{
+        width：100%;
+    }
+    .pagnation{
+        float:left;
+        margin-left: auto;
+        margin-top: 0px;
+}
+}
+
+/*HuZY*/
+
+body {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.7;
+  color: gray;
+  background: #e8e8e8;
+}
+
+/*changed by HuZY*/
+
+/*by yuanXY*/
+.new-form-group{
+   width:300px;
+   margin:0 0 0 0;
+}
+.new-form-control{
+   width:180px;
+   margin:0 0 0 0;
+}
+.new-col-md-3 control-label{
+  width:150px;
+  padding:0 0 0 0;
+  margin:5px 0 0 0;
+  text-align:left;
+}
+.new-col-md-9{
+  width:180px;
+}
+/*by yuanXY*/
+
+.chooserange{
+    width:200px;
+    margin:0 auto;
+}
+
+.part-prev, .part-next{
+    width:32px;
+    height:34px;
+    border-radius:16px;
+    margin: 0 5px;
+
+}
+.part-prev:hover{
+    background-color:#e8e8e8;
+    color:#333;
+}
+.part-next:hover{
+    background-color:#e8e8e8;
+    color:#333;
+}
+/*.removetimeline{
+    padding: 20px;
+    margin: 0 auto;
+    overflow: hidden;
+}*/
+.removetimeline:after{
+    width:0;
+}

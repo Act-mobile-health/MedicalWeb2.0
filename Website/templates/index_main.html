@@ -1,0 +1,515 @@
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio no-localstorage no-sessionstorage webworkers applicationcache svg inlinesvg no-smil svgclippaths"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>iBreathCare</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by freehtml5.co">
+	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive">
+
+
+
+	<style>
+		.test {
+				position: relative;
+				font-size: 13px;
+				padding: 30px 12px;
+				color: rgba(0,0,0,.3);
+				@include transition(.5s);
+
+				&:after{
+					position: absolute;
+					bottom: 25px;
+					left: 0;
+					right: 0;
+					content: '';
+					width: 58%;
+					height: 2px;
+					margin: 0 auto;
+					opacity: 0;
+
+					-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+					transition: transform 0.3s, opacity 0.3s;
+					-webkit-transform: translate3d(0, -10px, 0);
+					transform: translate3d(0, -10px, 0);
+				}
+				&:hover{
+					color: $brand-black;
+					&:after{
+						opacity: 1;
+						-webkit-transform: translate3d(0, 0, 0);
+						transform: translate3d(0, 0, 0);
+					}
+				}
+			}
+	</style>
+  	<!-- Facebook and Twitter integration -->
+	<meta content="" property="og:title">
+	<meta content="" property="og:image">
+	<meta content="" property="og:url">
+	<meta content="" property="og:site_name">
+	<meta content="" property="og:description">
+	<meta name="twitter:title" content="">
+	<meta name="twitter:image" content="">
+	<meta name="twitter:url" content="">
+	<meta name="twitter:card" content="">
+
+	<link href="https://fonts.googleapis.com/css?family=Oxygen:300,400" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+
+	<!-- Animate.css -->
+	<link href="/static/css/animate.css" rel="stylesheet">
+	<!-- Icomoon Icon Fonts-->
+	<link href="/static/css/icomoon.css" rel="stylesheet">
+	<!-- Bootstrap  -->
+	<link href="/static/css/bootstrap.css" rel="stylesheet">
+
+	<!-- Magnific Popup -->
+	<link href="/static/css/magnific-popup.css" rel="stylesheet">
+
+	<!-- Flexslider  -->
+	<link href="/static/css/flexslider.css" rel="stylesheet">
+
+	<!-- Theme style  -->
+	<link href="/static/css/style_main.css" rel="stylesheet">
+
+	<link href="/static/css/mycss.css" rel="stylesheet" />
+	<link href="/static/css/check.css" rel="stylesheet">
+	<!-- Modernizr JS -->
+	<script src="/static/js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	</head>
+	<body style="overflow:hidden;min-height:100%;">
+	<div class="fh5co-loader" style="display: none;"></div>
+	<div id="page" style="overflow:hidden;min-height:100%;">
+		<div id="fh5co-offcanvas"></div>
+		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle fh5co-nav-white"><i></i></a>
+		<nav class="fh5co-nav" id="nav" role="navigation" style="margin:0 0 0 0;height:12%">
+			<div class="container-wrap">
+				<div class="top-menu">
+					<div class="row">
+						<div class="col-xs-2">
+							<div id="fh5co-logo"><a href="">iBreathCare</a></div>
+						</div>
+
+						<ul class="col-xs-10 text-right menu-1">
+							<li id="home"><a href="/index_home" target="test">首页</a></li>
+							<li id="experiment" class="has-dropdown">
+								<a href="#">实验组</a>
+								<ul id="experimentGroupnav" class="dropdown">
+								</ul>
+							</li>
+							<li id="patient" class="has-dropdown">
+								<a href="#">患者</a>
+								<ul class="dropdown">
+									<li id="patients"><a class="test" href="/index_patientinfos" target="test">患者汇总信息</a></li>
+									<li id="visito"><a href="/index_outpatientinfos" target="test">+ 门诊随访记录</a></li>
+									<li id="visith"><a href="/index_hospitalpatientinfos" target="test">+ 住院随访记录</a></li>
+									<li id="visite"><a href="/index_emergencypatientinfos" target="test">+ 急诊随访记录</a></li>
+								</ul>
+							</li>
+							<li class="has-dropdown">
+								<a href="#">消息<span class="badge" id="messageSum"></a>
+								<ul id="message" class="dropdown">
+									<li><a href="/index_message" target="test">患者留言<span class="badge" id="message_topSum"></span></a></li>
+									<li><a href="/index_message" target="test">患者预警信息</a></li>
+									<li><a href="/index_message" target="test">APP就诊信息<span class="badge" id="sfSum">0</span></a>
+									</li>
+								</ul>
+							</li>
+							<li id="settings" class="has-dropdown">
+								<a href="#" id="uname"></a>
+								<ul class="dropdown">
+									<li id="personnel"><a href="/index_personnel" target="test">个人信息</a></li>
+									<li id="users"><a href="/index_setting" target="test">用户管理</a></li>
+									<li id="invite"><a href="/index_invite" target="test">邀请码管理</a></li>
+									<li><a href="#">主题</a></li>
+										<li><a href="/logout/">登出</a></li>
+								</ul>
+							</li>
+						</ul>
+						<div class="col-xs-10 text-right menu-1" style="display:none;">
+							<ul>
+								<li><a href="/index_home" target="test">首页</a></li>
+								<li class="has-dropdown">
+									<a href="#">实验组</a>
+									<ul id="experimentGroupmobile" class="dropdown">
+									</ul>
+								</li>
+								<li class="has-dropdown">
+									<a href="#">患者</a>
+									<ul class="dropdown">
+										<li><a href="/index_patientinfos" target="test">患者汇总信息</a></li>
+										<li><a href="/index_outpatientinfos" target="test">+ 门诊随访记录</a></li>
+										<li><a href="/index_hospitalpatientinfos" target="test">+ 住院随访记录</a></li>
+										<li><a href="/index_emergencypatientinfos" target="test">+ 急诊随访记录</a></li>
+									</ul>
+								</li>
+								<li class="has-dropdown">
+									<a href="#">消息</a>
+									<ul class="dropdown">
+										<li><a href="/index_message" target="test">患者留言</a></li>
+										<li><a href="/index_message" target="test">患者预警信息</a></li>
+										<li><a href="/index_message" target="test">APP提交就诊信息</a></li>
+									</ul>
+								</li>
+								<li class="has-dropdown">
+									<a href="#">设置</a>
+									<ul class="dropdown">
+										<li><a href="/index_personnel" target="test">个人信息</a></li>
+										<li><a href="/index_setting" target="test">用户管理</a></li>
+										<li><a href="/index_invite" target="test">邀请码管理</a></li>
+										<li><a href="#">主题</a></li>
+										<li><a href="#">登出</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<div style="display:none;position:absolute;top:12%;left:0;width:18%;float:left;background-color:white;height:89%">
+			<!--<img src="../../static/img/portfolio-5.jpg" width="200px" height="200px">-->
+			<div class="text-center animate-box fadeInUp animated-fast" id="btn1" style="margin:10%;">
+					<a class="work" style="background-image: url(../../static/img/portfolio-5.jpg);border-color:gray;height:200px;width:100%;" href="#p1">
+						<div class="desc" style="height:20px;">
+							<h3>实验组</h3>
+							<span>新增/已有</span>
+						</div>
+					</a>
+                    <div id="experimentGroup" style="width:100%">
+                    </div>
+			</div>
+		</div>
+		<iframe  id="frame" src="/index_home" frameborder="0" name="test" width="100%" height="89%" style="background-color:transparent;margin:0;" marginheight="0" marginwidth="0"> </iframe>
+        <div class="copyrights">Collect from <a title="网站模板" href="http://www.cssmoban.com/">网站模板</a></div>
+		<div class="modal fade" id="ExperimentGroupDetails">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title" style="color:black">实验组</h4>
+					</div>
+					<div class="modal-body">
+						<form class="form-horizontal" method="post"  role="form" id="ExperimentGroupInfo">
+								{% csrf_token %}
+                            <div class="form-group">
+                                <label  class="col-md-2  mylabel">实验组编号</label>
+                                <div class="col-md-2"><input type="text" class="form-control myinput " name="G_id" id="G_id" readonly="true"></div>
+                            </div>
+                            <div class="form-group">
+                                <label  class="col-md-2  mylabel">名称</label>
+                                <span style="color:red;float:left;">*</span>
+                                <div class="col-md-3" style="padding-left: 7px;padding-right: 22px;"><input type="text" class="form-control myinput" name="name" oninput="checkename()"></div>
+								<div class="enamestatus"></div>
+                            </div>
+                            <div class="form-group">
+                                <label  class="col-md-2 mylabel">创建时间</label>
+                                <div class="col-md-3"><input type="date" class="form-control myinput" name="date"></div>
+                            </div>
+                            <div class="form-group">
+                                <label  class="col-md-2 mylabel">创建者</label>
+                                <div class="col-md-2"><input type="text" class="form-control myinput" name="D_id" readonly="true"></div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 mylabel">描述</label>
+                                <div class="col-md-8"><textarea class="form-control myinput" name="description"></textarea></div>
+                            </div>
+                         </form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+						<button type="button" id = "experimentGroupbt" class="btn btn-primary" data-dismiss="modal" style="border-top-width: 1px;border-bottom-width: 1px;margin-bottom: 4px;">保存</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+	</div>
+
+
+	<!-- jQuery -->
+	<script src="/static/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="/static/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="/static/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="/static/js/jquery.waypoints.min.js"></script>
+	<!-- Flexslider -->
+	<script src="/static/js/jquery.flexslider-min.js"></script>
+	<!-- Magnific Popup -->
+	<script src="/static/js/jquery.magnific-popup.min.js"></script>
+	<script src="/static/js/magnific-popup-options.js"></script>
+	<!-- Counters -->
+	<script src="/static/js/jquery.countTo.js"></script>
+	<!-- Main -->
+	<script src="/static/js/main.js"></script>
+
+	<script>
+		function messageRec() {
+            var o = 0, h = 0, e = 0;
+            var sum = 0;
+            try {
+                $.ajax({
+                    type: "GET",
+                    url: "/i96/",
+                    //        async:false,
+                    dataType: "json",
+                    success: function (json_data) {
+                        $.each(json_data, function (index, item) {
+                            if (item.type == "0" && item.sign == "1") {
+                                o = o + 1;
+                            }
+                            else if (item.type == "1" && item.sign == "1") {
+                                e = e + 1;
+                            }
+                            else if (item.type == "2" && item.sign == "1") {
+                                h = h + 1;
+                            }
+                        });
+                        $("#sfSum").html(o + e + h);
+                        $.ajax({
+                            type: "GET",
+                            url: "/i97/",
+                            //data:{P_id:patientId},
+                            dataType: "json",
+                            //async:false,
+                            success: function (json_data) {
+                                $.each(json_data, function (index, item) {
+                                    if (item.sign == "1") {
+                                        sum = sum + 1;
+                                    }
+                                });
+                                $("#message_topSum").html(sum);
+                                $("#messageSum").html(sum + e + o + h);
+                            },
+                            error: function (json_data) {
+                                errorProcess(json_data);
+                            }
+                        });
+                    },
+                    error: function (json_data) {
+                        errorProcess(json_data);
+                    }
+                });
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+	</script>
+	<script>
+		$("#frame").attr("src","/index_"+window.location.href.split("/")[3]+"?"+window.location.href.split("?")[1]);
+
+		$("#home").click(function(){
+		       var url = "/home";
+		       window.history.pushState({},0,url);
+		});
+		$("#message").click(function(){
+		       var url = "/message";
+		       window.history.pushState({},0,url);
+		});
+		$("#patients").click(function(){
+		       var url = "/patientinfos";
+		       window.history.pushState({},0,url);
+		});
+		$("#visito").click(function(){
+		       var url = "/outpatientinfos";
+		       window.history.pushState({},0,url);
+		});
+		$("#visite").click(function(){
+		       var url = "/emergencypatientinfos";
+		       window.history.pushState({},0,url);
+		});
+		$("#visith").click(function(){
+		       var url = "/hospitalpatientinfos";
+		       window.history.pushState({},0,url);
+		});
+		$("#personnel").click(function(){
+		       var url = "/personnel";
+		       window.history.pushState({},0,url);
+		});
+		$("#users").click(function(){
+		       var url = "/setting";
+		       window.history.pushState({},0,url);
+		});
+		$("#invite").click(function(){
+		       var url = "/invite";
+		       window.history.pushState({},0,url);
+		});
+	</script>
+	<script>
+		function changeUrl(i){
+		    var url = "/group/?G_id="+i;
+			window.history.pushState({},0,url);
+		}
+	</script>
+	<script>
+		function getScrollbarWidth() {
+		    var oP = document.createElement('p'),
+				styles = {
+		        width: '100px',
+					height: '100px',
+					overflowY: 'scroll'
+				}, i, scrollbarWidth;
+		    for (i in styles) oP.style[i] = styles[i];
+		    document.body.appendChild(oP);
+		    scrollbarWidth = oP.offsetWidth - oP.clientWidth;
+		    oP.remove();
+		    return scrollbarWidth;
+		}
+	</script>
+	<script>
+		$( document ).ready(function() {
+		    $("#nav").css("margin-right",""+getScrollbarWidth()+"px");
+		    showExperimentGroup();
+		    messageRec();
+
+		    document.onkeydown = function (e) {
+		        var ev = window.event || e;
+		        var code = ev.keyCode || ev.which;
+		        if (code == 116) {
+		            if(ev.preventDefault) {
+		                ev.preventDefault();
+		                var add=parent.document.getElementById("frame").contentWindow.location.href;
+		                $("#frame").attr("src",add);
+		            } else {
+		                ev.keyCode = 0;
+		                ev.returnValue = false;
+		            }
+		        }
+		    };
+		    $("#experimentGroupbt").click(function(){
+		        submitExperimentGroup();
+		    });
+
+		    $.ajax({
+                type: "GET",
+                url: "/i6/",
+                data: {},
+                dataType: "json",
+                success: function (item) {
+					document.getElementById("uname").innerHTML=item.userName;
+                   // $("#DoctorInfo input[name='name']").val(item.name);
+                   // $("#DoctorInfo input[name='userName']").val(item.userName);
+
+                },
+                error: function (data) {
+                    errorProcess(data);
+                }
+            });
+		});
+	</script>
+    <script>
+	function showExperimentGroup(){
+		group = document.getElementById("experimentGroup");
+		groupnav = document.getElementById("experimentGroupnav");
+		groupmobile = document.getElementById("experimentGroupmobile");
+		group.innerHTML = '<a data-toggle="modal" onclick = "addExperimentGroup()" href="#ExperimentGroupDetails"><span style="color:gray;font-size:20px;"><b>+ 添加实验组</b></span></a><br/><hr/>';
+		groupnav.innerHTML = '<li><a data-toggle="modal" onclick = "addExperimentGroup()" href="#ExperimentGroupDetails">+ 添加实验组</a></li>';
+		groupmobile.innerHTML = '<li><a data-toggle="modal" onclick = "addExperimentGroup()" href="#ExperimentGroupDetails">+ 添加实验组</a></li>';
+		$.ajax({
+			type: "GET",
+			url: "/i37/",
+			data: {},
+			dataType: "json",
+			success: function (json_data) {
+				$.each(json_data,function(index,item){
+					group.innerHTML=group.innerHTML+'';
+					if(G_id == item.G_id){
+						group.innerHTML = group.innerHTML + '<a href="/index_group/?G_id='+item.G_id+'"  target="test"><span style="color:gray;;font-size:20px;"><b> 实验组 '+(index+1)+' : '+item.name+'</b></span></a><br/><hr/>';
+						groupnav.innerHTML = groupnav.innerHTML + '<li onclick="changeUrl('+item.G_id+')"><a href="/index_group/?G_id='+item.G_id+'"  target="test"> 实验组 '+(index+1)+' : '+item.name+'</a><li/>';
+						groupmobile.innerHTML = groupmobile.innerHTML + '<li><a href="/index_group/?G_id='+item.G_id+'"  target="test"> 实验组 '+(index+1)+' : '+item.name+'</a><li/>';
+
+					}
+					else{
+						group.innerHTML = group.innerHTML + '<a href="/index_group/?G_id='+item.G_id+'"  target="test"><span style="color:gray;;font-size:20px;"> 实验组 '+(index+1)+' : '+item.name+'</span></a><br/><hr/>';
+						groupnav.innerHTML = groupnav.innerHTML + '<li onclick="changeUrl('+item.G_id+')"><a href="/index_group/?G_id='+item.G_id+'"  target="test"> 实验组 '+(index+1)+' : '+item.name+'</a><li/>';
+						groupmobile.innerHTML = groupmobile.innerHTML + '<li><a href="/index_group/?G_id='+item.G_id+'"  target="test"> 实验组 '+(index+1)+' : '+item.name+'</a><li/>';
+											}
+				});
+				checkename();
+			},
+			error:function(data){
+				errorProcess(data);
+			}
+		});
+	}
+	function addExperimentGroup(){
+    	$("#ExperimentGroupInfo :text").val("");
+	}
+	function submitExperimentGroup(){
+    	if (confirm("确定提交吗？")){
+        	$.ajax({
+				type: "POST",
+				url: "/i38/",
+				data: $("#ExperimentGroupInfo").serialize(),
+				dataType: "json",
+				success: function (data) {
+				    jump();
+			showExperimentGroup();
+					successProcess(data);
+				},
+				error:function(data){
+					errorProcess(data);
+				}
+			});
+    	}
+	}
+	function jump(){
+	    $.ajax({
+			type: "GET",
+			url: "/i37/",
+			data: {},
+			dataType: "json",
+			success: function (json_data) {
+				$.each(json_data,function(index,item){
+					window.location.href="/index_main/group/?G_id="+item.G_id;
+				});
+			},
+			error:function(data){
+				errorProcess(data);
+			}
+		});
+	}
+	function getGroup(){
+		$.ajax({
+			type:"GET",
+			url:"/i63/",
+			dataType:"json",
+			data:{},
+			success:function(data){
+				if(data.result == "1"){
+				   document.getElementById('setting').style.display = 'block';
+				}
+			},
+			error:function(d){
+				errorProcess(data);
+				console.log(d);
+			}
+		});
+	}
+	function checkename(){
+    	var name = $("#ExperimentGroupInfo input[name='name']").val();
+    	if(name.length == 0 || name == null || name == "" || name == undefined){
+    	    $('.enamestatus').html("");
+        	$('.enamestatus').removeClass("tick");
+        	$('.enamestatus').addClass('error');
+        	$('.enamestatus').css("margin-top", "6px");
+        	return false;
+    	}else{
+        	$('.enamestatus').html("");
+        	$('.enamestatus').removeClass("error");
+        	$('.enamestatus').addClass('tick');
+        	$('.enamestatus').css("margin-top", "6px");
+    	}
+
+    	return true;
+	}
+    </script>
+
+</body></html>

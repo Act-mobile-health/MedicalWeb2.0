@@ -1,0 +1,291 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>家属信息</title>
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
+	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+
+	<link href="https://fonts.googleapis.com/css?family=Oxygen:300,400" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="/static/test/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="/static/test/css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="/static/test/css/bootstrap.css">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="/static/test/css/magnific-popup.css">
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="/static/test/css/flexslider.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="/static/test/css/style1.css">
+
+	<!-- Modernizr JS -->
+	<script src="/static/test/js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="/static/test/js/respond.min.js"></script>
+	<![endif]-->
+    <link href="/static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/static/test/css/newcss.css">
+    <link href="/static/css/check.css" rel="stylesheet">
+
+
+	</head>
+	<body>
+	<div class="fh5co-loader"></div>
+	<div>
+	<nav class="fh5co-nav" role="navigation">
+		<div class="container-wrap">
+			<div class="top-menu" style="position:fixed;z-index:999;background-color:#ffffff;max-height:40px;padding:0;">
+				<div class="row" >
+					<div>
+						<div style="max-width:1060px;margin:0 auto;">
+							<ol class="breadcrumb" style="margin-bottom:0;display:block">
+								<li><i class="sidebarCon hideclick fa fa-th-list" onclick="sidebarControl()"></i></li>
+								<li class="active"><a class="pName">IBreathCare</a></li>
+							</ol>
+						</div>
+					</div>
+
+					<div class="col-xs-10 text-right menu-1">
+						<ul>
+							<li><a href="/patientDetail/" class="patientDet">患者详情</a></li>
+							<li><a href="/patientDisease/" class="patientDis">疾病信息</a></li>
+							<li><a href="/patientRelation/" class="patientRel">家属信息</a></li>
+							<li onclick="showAll('1')"><a href="/patientFollowUp/" class="patientFol">随访记录</a></li>
+							<li onclick="showAPP()"><a href="/patientAPPinfo/" class="patientAPP">APP数据</a></li>
+						</ul>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</nav>
+	<div class="container-wrap">
+		<aside id="fh5co-hero">
+			<div class="flexslider">
+				<ul class="slides">
+			   	<li style="background:#ffffff;">
+			   		<div class="overlay-gradient"></div>
+		   			<div>
+                        <div class="mysidebar" id="mysidebar">
+                            <div class="panel-body text-center" style="padding:30px">
+								<div class="bk-avatar" style="width:100px;height:100px">
+									<img src="/static/img/avatar.jpg" class="img-circle bk-img-60" alt="">
+								</div>
+								<div class="bk-padding-top-10">
+									<i class="fa fa-circle text-success"></i><small class="pName" style="font-size:15px;"></small>
+								</div>
+							</div>
+
+							<ul>
+								<li><i class="fa fa-caret-square-o-up" aria-hidden="true" style="margin-right:9px;font-size:18px"></i><a href="/patientDetail/" class="patientDet" style="font-size: 18px;color:white">患者详情</a></li>
+							 	<li><i class="fa fa-file-o" aria-hidden="true" style="margin-right:9px;font-size:18px"></i><a href="/patientDisease/" class="patientDis" style="font-size: 18px;color:white">疾病信息</a></li>
+							 	<li><i class="fa fa-list-alt" aria-hidden="true" style="margin-right:7px;font-size:18px"></i><a href="/patientRelation/" class="patientRel" style="font-size: 18px;color:white">家属信息</a></li>
+							 	<li onclick="showAll('1')"><i class="fa fa-ambulance" aria-hidden="true" style="margin-right:7px;font-size:18px"></i><a href="/patientFollowUp/" class="patientFol" style="font-size: 18px;color:white">随访记录</a></li>
+							 	<li onclick="showAPP()"><i class="fa fa-th-large" aria-hidden="true" style="margin-right:11px;font-size:18px"></i><a href="/patientAPPinfo/" class="patientAPP" style="font-size: 18px;color:white">APP数据</a></li>
+							</ul>
+                        </div>
+                         <div class="mycontent" id="mycontent">
+                            <div class="panel">
+                                <div class="panel-heading bk-bg-primary" style="padding:10px;">
+                                    <h4 style="font-size: 20px;margin-bottom:0px;"><i class="fa fa-table red"></i><span class="break"></span>家属信息</h4>
+
+                                </div>
+                                <div class="panel-body" id="panel-body" style="margin:0 auto;max-width:1000px;padding-left:30px">
+                                    <div class="row table-responsive">
+                                        <table class="table table-bordered table-hover table-entire" id="RelationInfoTable" style="width: 99%">
+                                            <thead>
+                                            <tr>
+                                                <th class="tlabel6" style="text-align:center;width:45px">编号</th>
+                                                <th class="table-small tlabel6" style="text-align:center">姓名</th>
+                                                <th class="tlabel6" style="text-align:center;width:45px;">性别</th>
+                                                <th class="table-small tlabel6" style="text-align:center;">固定电话</th>
+                                                <th class="table-small tlabel6" style="text-align:center;">手机</th>
+                                                <th class="table-small tlabel6" style="text-align:center;">微信</th>
+                                                <th class="table-small tlabel6" style="text-align:center;">邮箱</th>
+                                                <th class="tlabel6" style="text-align:center">住址</th>
+                                                <th class="tlabel6" style="text-align:center;width:45px;">编辑</th>
+                                                <th class="tlabel6" style="text-align:center;width:45px">删除</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                        <div class="row col-lg-4 col-md-4 text-left">
+                                            <a  data-toggle="modal" onclick="addRelationInfo()" href="#RelationInfoDetails" style="font-size: 15px;color: #71e48a;" class="mylabel"><i class="glyphicon glyphicon-plus "></i> 添加新的家属信息</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+			   	</li>
+			  	</ul>
+		  	</div>
+		</aside>
+
+	</div><!-- END container-wrap -->
+
+
+	</div>
+    <!--<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+	</div>-->
+
+    <div class="modal fade" id="RelationInfoDetails">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content ">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">家属信息</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                        <form class="form-horizontal" id = "RelationInfo" method="post" role="form">
+							{% csrf_token %}
+                            <div class="row ">
+                                <div class="form-group col-lg-6 col-md-6 myblockposition" style="border:0px"> <!--HuZY-->
+                                    <label class="col-sm-3 control-label mylabel">姓名</label>
+                                    <span style="color:red;float:left;">*</span>
+                                    <div class="col-sm-6" style="padding-left: 7px; padding-right:23px">
+                                      <input type="text" class="form-control myinput" name="name" oninput="checkrname()">
+                                    </div>
+                                    <div class="rnamestatus"></div>
+                                </div>
+                                <div class="form-group col-lg-6 col-md-6 myblockposition" style="border:0px"> <!--HuZY-->
+                                    <label class="col-sm-3 control-label mylabel">编号</label>
+                                    <div class="col-sm-6">
+                                      <input type="text" class="form-control myinput" name="R_id" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="form-group col-lg-6 col-md-6 myblockposition" style="border:0px"> <!--HuZY-->
+                                    <label class="col-sm-3 control-label mylabel">固定电话</label>
+                                    <div class="col-sm-6" >
+                                      <input type="text" class="form-control myinput" name="telephone" oninput="checkrtele()">
+                                    </div>
+                                    <div class="rtelestatus"></div>
+                                </div>
+                                <div class="form-group col-lg-6 col-md-6 myblockposition" style="border:0px"> <!--HuZY-->
+                                    <label class="col-sm-3 control-label mylabel">手机</label>
+                                    <div class="col-sm-6">
+                                      <input type="text" class="form-control myinput" name="cellphone" oninput="checkrcell()">
+                                    </div>
+                                    <div class="rcellstatus"></div>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="form-group col-lg-6 col-md-6 myblockposition" style="border:0px"> <!--HuZY-->
+                                    <label class="col-sm-3 control-label mylabel">微信</label>
+                                    <div class="col-sm-6" >
+                                      <input type="text" class="form-control myinput" name="weChat">
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-6 col-md-6 myblockposition" style="border:0px"> <!--HuZY-->
+                                    <label class="col-sm-3 control-label mylabel">邮箱</label>
+                                    <div class="col-sm-6">
+                                      <input type="text" class="form-control myinput" name="mail" oninput="checkrmail()">
+                                    </div>
+                                    <div class="rmailstatus"></div>
+                                </div>
+                            </div>
+                            <div class="row ">
+
+                                <div class="form-group col-lg-6 col-md-6 myblockposition" style="border:0px"> <!--HuZY-->
+                                    <label class="col-sm-3 control-label mylabel">性别</label>
+                                    <div class="col-sm-6">
+                                      <input type="text" class="form-control myinput" name="sex" oninput="checkrsex()">
+                                    </div>
+                                    <div class="rsexstatus"></div>
+                                </div>
+                                <div class="form-group col-lg-6 col-md-6 myblockposition" style="border:0px"> <!--HuZY-->
+                                    <label class="col-sm-3 control-label mylabel">家庭住址</label>
+                                    <div class="col-sm-6" >
+                                      <input type="text" class="form-control myinput" name="homeAddr">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="button" id="submitRelationInfobt" class="btn btn-primary" data-dismiss="modal">保存</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+
+	<!-- jQuery -->
+	<script src="/static/test/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="/static/test/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="/static/test/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="/static/test/js/jquery.waypoints.min.js"></script>
+	<!-- Flexslider -->
+	<script src="/static/test/js/jquery.flexslider-min.js"></script>
+	<!-- Magnific Popup -->
+	<script src="/static/test/js/jquery.magnific-popup.min.js"></script>
+	<script src="/static/test/js/magnific-popup-options.js"></script>
+	<!-- Counters -->
+	<script src="/static/test/js/jquery.countTo.js"></script>
+	<!-- Main -->
+	<script src="/static/test/js/main.js"></script>
+
+
+		<!-- start: JavaScript-->
+
+		<script src="/static/plugins/dropzone/js/dropzone.min.js"></script>
+
+		<!-- Theme JS -->
+		<script src="/static/js/jquery.mmenu.min.js"></script>
+		<script src="/static/js/core.min.js"></script>
+
+
+		<script src="/static/plugins/jquery-ui/js/jquery-ui-1.10.4.min.js"></script>
+		<script src="/static/plugins/moment/js/moment.min.js"></script>
+		<script src="/static/plugins/fullcalendar/js/fullcalendar.min.js"></script>
+		<script src="/static/plugins/chosen/js/chosen.jquery.min.js"></script>
+		<script src="/static/plugins/autosize/jquery.autosize.min.js"></script>
+		<script src="/static/plugins/placeholder/js/jquery.placeholder.min.js"></script>
+		<script src="/static/plugins/wizard/js/jquery.bootstrap.wizard.min.js"></script>
+		<script src="/static/plugins/maskedinput/js/jquery.maskedinput.js"></script>
+		<script src="/static/js/pages/form-wizard.js"></script>
+
+
+		<script src="/static/vendor/skycons/js/skycons.js"></script>
+
+		<script src="/static/js/globalize.min.js"></script>
+		<script src="/static/js/dx.chartjs.js"></script>
+		<script src="/static/js/echarts.min.js"></script>
+		<script src="/static/plugins/moment/js/moment.min.js"></script>
+		<script src="/static/plugins/fullcalendar/js/fullcalendar.min.js"></script>
+
+		<!-- Pages JS -->
+        <script src="/static/js/pages/tools.js"></script>
+		<!--<script type="text/javascript" src="/static/js/pages/main.js"></script>-->
+
+        <script src="/static/js/pages/patientDetailRel.js"></script>
+        <script src="/static/js/pages/patientDetail.js"></script>
+
+        <script src="/static/js/pages/skinManage.js"></script>
+		<!-- end: JavaScript-->
+
+	</body>
+</html>

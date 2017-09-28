@@ -1,0 +1,130 @@
+.mylabel{
+    color:black !important;
+    font-weight:normal !important;
+    font-size:15px !important;
+    text-align:center;
+}
+
+.mylabel2{
+    color:black !important;
+    font-weight:normal !important;
+    font-size:15px !important;
+    text-align:left !important;
+    text-indent:2em;
+}
+
+
+
+.myinput{
+    border:1px solid #584f4f !important;
+    font-size:15px !important;
+    padding-bottom:0px !important;
+    height:30px;
+    vertical-align:bottom;
+    margin-bottom:10px;
+    margin-top:0;
+    padding-top:0px;
+}
+.mycheckbox{
+    color:black !important;
+    font-weight:  !important;
+    font-size:16px !important;
+    text-align:left !important;
+}
+
+
+.myblockposition{
+    /*margin-top:5px ;*/
+    padding-left:0px !important;
+    padding-right:0px !important;
+    /*margin-bottom:10px;*/
+    margin:0 0 0 0;
+}
+.myquestion{
+    margin-left: 1% !important;
+    color:black !important;
+    font-weight:  !important;
+    font-size:16px !important;
+    text-align:left !important;
+}
+.shortinput{
+    width:35px;
+}
+
+.table-entire{
+    text-align:center;
+    color:black;
+    fontsize:13px;
+}
+
+.table-small{
+    width:10%;
+}
+
+.table-bordered th,
+  .table-bordered td {
+    border: 1px solid #000 !important;
+  }
+
+.tlabel1{
+    background:#f1b7b7 !important;
+}
+.tlabel2{
+    background:#c7c7fb !important;
+}
+.tlabel3{
+    background:#bfe6bf !important;
+}
+.tlabel4{
+    background:#e3eaad !important;
+}
+
+.tlabel5{
+    background:#ecef74 !important;
+}
+.tlabel6{
+    background:#c6eadd !important;
+}
+
+.badge1{
+    background: #d9534f;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: normal;
+    height: 25px;
+    padding: 3px 5px 3px 5px;
+    position: absolute;
+    right: 2px;
+    top: 3px;
+    border-radius:12px !important;
+}
+
+.sum{
+}
+
+.mbq1{
+}
+.mbq2{
+}
+#PatientInfo input[type="text"]{
+    height:30px;
+}
+#ExperimentGroupDetails input[type="text"]{
+    height:30px;
+}
+#experimentGroupbt{
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    margin-bottom: 4px;
+}
+#DoctorInfoDetails .col-md-3{
+    top: -5px;
+    bottom: 5px;
+}
+#DoctorInfoDetails .mycheckbox{
+    top: -7px;
+    bottom: 5px;
+}
+#ExperimentGroupDetails .mylabel{
+    top:2px;
+}

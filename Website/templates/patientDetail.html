@@ -1,0 +1,503 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>患者详情</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
+	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+
+
+	<link href="https://fonts.googleapis.com/css?family=Oxygen:300,400" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="/static/test/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="/static/test/css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="/static/test/css/bootstrap.css">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="/static/test/css/magnific-popup.css">
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="/static/test/css/flexslider.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="/static/test/css/style1.css">
+
+	<!-- Modernizr JS -->
+	<script src="/static/test/js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="/static/test/js/respond.min.js"></script>
+	<![endif]-->
+
+	<link rel="stylesheet" href="/static/test/paging/css/style.css" type="text/css">
+	<link href="/static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="/static/test/css/newcss.css">
+	<link href="/static/css/check.css" rel="stylesheet">
+
+
+	</head>
+	<body>
+
+	<div class="fh5co-loader"></div>
+	<div>
+	<nav class="fh5co-nav" role="navigation">
+		<div class="container-wrap">
+
+			<div class="top-menu" style="position:fixed;z-index:999;background-color:#ffffff;max-height:40px;padding:0;">
+				<div class="row" >
+					<div>
+						<div style="max-width:1060px;margin:0 auto;">
+							<ol class="breadcrumb" style="margin-bottom:0;display:block">
+								<li><i class="sidebarCon hideclick fa fa-th-list" onclick="sidebarControl()"></i></li>
+								<li class="active"><a class="pName">IBreathCare</a></li>
+							</ol>
+						</div>
+					</div>
+
+					<div class="col-xs-10 text-right menu-1">
+						<ul>
+							<li><a href="/patientDetail/" class="patientDet">患者详情</a></li>
+							<li><a href="/patientDisease/" class="patientDis">疾病信息</a></li>
+							<li><a href="/patientRelation/" class="patientRel">家属信息</a></li>
+							<li onclick="showAll('1')"><a href="/patientFollowUp/" class="patientFol">随访记录</a></li>
+							<li onclick="showAPP()"><a href="/patientAPPinfo/" class="patientAPP">APP数据</a></li>
+						</ul>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</nav>
+
+	<div class="container-wrap">
+		<aside id="fh5co-hero">
+			<div class="flexslider">
+				<ul class="slides">
+			   	<li style="background:#ffffff;">
+			   		<div class="overlay-gradient"></div>
+		   			<div>
+						<div class="mysidebar" id="mysidebar" >
+							<div class="panel-body text-center" style="padding:30px">
+								<div class="bk-avatar" style="width:100px;height:100px">
+									<img src="/static/img/avatar.jpg" class="img-circle bk-img-60" alt="">
+								</div>
+								<div class="bk-padding-top-10">
+									<i class="fa fa-circle text-success"></i><small class="pName" style="font-size:15px;"></small>
+								</div>
+							</div>
+
+							<ul>
+								<li><i class="fa fa-caret-square-o-up" aria-hidden="true" style="margin-right:9px;font-size:18px"></i><a href="/patientDetail/" class="patientDet" style="font-size: 18px;color:white">患者详情</a></li>
+							 	<li><i class="fa fa-file-o" aria-hidden="true" style="margin-right:9px;font-size:18px"></i><a href="/patientDisease/" class="patientDis" style="font-size: 18px;color:white">疾病信息</a></li>
+							 	<li><i class="fa fa-list-alt" aria-hidden="true" style="margin-right:7px;font-size:18px"></i><a href="/patientRelation/" class="patientRel" style="font-size: 18px;color:white">家属信息</a></li>
+							 	<li onclick="showAll('1')"><i class="fa fa-ambulance" aria-hidden="true" style="margin-right:7px;font-size:18px"></i><a href="/patientFollowUp/" class="patientFol" style="font-size: 18px;color:white">随访记录</a></li>
+							 	<li onclick="showAPP()"><i class="fa fa-th-large" aria-hidden="true" style="margin-right:11px;font-size:18px"></i><a href="/patientAPPinfo/" class="patientAPP" style="font-size: 18px;color:white">APP数据</a></li>
+							</ul>
+						</div>
+                    	<div class="mycontent" id="mycontent"> <!--HuZY 直接全換掉 都是表的內容-->
+                        <div>
+                            <form class="form-horizontal" id = "PatientInfo" method="post" role="form">
+								<span id="formdetail1" name="formdetail1">
+									<div class="col-md-6" id="detailform1" style="width:100%;">
+                                            <div class="panel" style="border:1px solid;border-color:#79c447;text-align:center">
+                                                <div class="panel-heading bk-bg-primary">
+                                                    <h6 style="font-size: 20px;margin-bottom: 0px;padding-top: 5px;padding-bottom: 5px;text-align:left"><i class="fa fa-indent red"></i>基本信息</h6>
+                                                </div>
+								                <div class="panel-body">
+										<div class="form-group" style="display:none;">
+											<label class="col-md-13 control-label">编号</label>
+											<div class="col-md-14">
+												<input type="text" name="id" class="form-control" readonly>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-md-13 control-label">患者编号</label>
+											<span style="color:red;float:left;">*</span>
+											<div class="col-md-14" style="padding-left: 6.5px">
+												<input type="text" name="P_id" class="form-control" placeholder="Text" oninput="checkpid()">
+											</div>
+											<div class="pidstatus"></div>
+										</div>
+										<div class="form-group">
+											<label class="col-md-13 control-label">姓名</label>
+											<span style="color:red;float:left;">*</span>
+											<div class="col-md-14" style="padding-left: 6.5px">
+												<input type="text" name="name" class="form-control" placeholder="Email address" oninput="checkpname()">
+											</div>
+											<div class="pnamestatus"></div>
+										</div>
+                                         <div class="form-group">
+											<label class="col-md-13 control-label" style="float:left">签署知情同意书</label>
+											<div class="col-md-14">
+												<div class="radio-custom radio-inline" style="padding-top:7px;font-size:16px">
+													<input type="radio" name="sign" value="1">
+													<label> 是</label>
+												</div>
+												<div class="radio-custom radio-inline" style="padding-top:7px;font-size:16px">
+													<input type="radio" name="sign" value="2">
+													<label> 否</label>
+												</div>
+											</div>
+										</div>
+                                         <div class="form-group">
+											<label class="col-md-13 control-label">身份证号</label>
+											<div class="col-md-14">
+												<input type="text" name="IDCardNum" class="form-control" placeholder="身份证号" oninput="checkpIDnum()">
+											</div>
+											 <div class="pidnumstatus"></div>
+										</div>
+
+										<div class="form-group">
+											<label class="col-md-13 control-label">就医时间</label>
+											<div class="col-md-14">
+												<input type="date" name="registerTime" class="form-control" placeholder="请选择">
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="col-md-13 control-label">出生日期</label>
+											<div class="col-md-14">
+												<input type="date" name="birthday" class="form-control" placeholder="请选择">
+											</div>
+										</div>
+                                         <div class="form-group">
+											<label class="col-md-13 control-label">性别</label>
+											<div class="col-md-14">
+												<div class="radio-custom radio-inline" style="padding-top:7px;font-size:16px">
+													<input type="radio" name="sex" value="1">
+													<label> 男</label>
+												</div>
+												<div class="radio-custom radio-inline" style="padding-top:7px;font-size:16px">
+													<input type="radio" name="sex" value="2">
+													<label> 女</label>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-md-13 control-label">年龄</label>
+											<span style="color:red;float:left;">*</span>
+											<div class="col-md-14" style="padding-left: 6.5px">
+												<input type="text" name="age" class="form-control" placeholder="age" oninput="checkpage()">
+											</div>
+											<div class="pagestatus"></div>
+										</div>
+										<div class="form-group">
+											<label class="col-md-13 control-label">民族</label>
+											<div class="col-md-14">
+												<input type="text" name="nation" class="form-control" placeholder="nation">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-md-13 control-label">身高</label>
+											<div class="col-md-14">
+												<input type="text" name="height" class="form-control" placeholder="height" oninput="checkpheight()">
+											</div>
+											<div class="pheightstatus"></div>
+										</div>
+										<div class="form-group">
+											<label class="col-md-13 control-label">体重</label>
+											<div class="col-md-14">
+												<input type="text" name="weight" class="form-control" placeholder="weight" oninput="checkpweight()">
+											</div>
+											<div class="pweightstatus"></div>
+										</div>
+										<div class="form-group">
+											<label class="col-md-13 control-label">学历</label>
+											<div class="col-md-14">
+												<select class="form-control" name="education">
+                                                    <option value="1">小学</option>
+                                                    <option value="2">初中</option>
+                                                    <option value="3">高中/中专</option>
+                                                    <option value="4">大学专科（大专）</option>
+                                                    <option value="5">大学本科（大本）</option>
+                                                    <option value="6">研究生（硕士/博士）</option>
+                                              </select>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-md-13 control-label">职业</label>
+											<div class="col-md-14">
+												<select class="form-control" name="career">
+                                                    <option value="1">农、林、牧、渔、水利业</option>
+                                                    <option value="2">工业</option>
+                                                    <option value="3">地质普查和勘探业</option>
+                                                    <option value="4">建筑业</option>
+                                                    <option value="5">交通运输业、邮电通信业</option>
+                                                    <option value="6">商业、公共饮食业、物资供应和仓储业</option>
+                                                    <option value="7">房地产管理、公用事业、居民服务和咨询服务业</option>
+                                                    <option value="8">卫生、体育和社会福利事业</option>
+                                                    <option value="9">教育、文化艺术和广播电视业</option>
+                                                    <option value="10">科学研究和综合技术服务业</option>
+                                                    <option value="11">金融、保险业</option>
+                                                    <option value="12">国家机关、党政机关和社会团体</option>
+                                                    <option value="13">其他行业</option>
+                                              </select>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="col-md-13 control-label">婚姻状况</label>
+											<div class="col-md-14">
+												<select class="form-control" name="marriage">
+                                                    <option value="1">未婚</option>
+                                                    <option value="2">已婚</option>
+                                                    <option value="3">离异</option>
+                                                    <option value="4">丧偶</option>
+                                              </select>
+											</div>
+										</div>
+
+                                     </div>
+                                     </div>
+                                     </div>
+								</span>
+								<span id="formdetail2" name="formdetail2" style="display:none">
+									<div class="col-md-6" id="detailform2" style="width:100%;">
+                                    <div class="panel" style="border:1px solid;border-color:#79c447;">
+                                        <div class="panel-heading bk-bg-primary" style="text-align:center">
+                                            <h6 style="font-size: 20px;margin-bottom: 0px;padding-top: 5px;padding-bottom: 5px;text-align:left"><i class="fa fa-indent red"></i>其他信息</h6>
+                                        </div>
+                                        <div class="panel-body">
+
+                                        <div class="form-group">
+											<label class="col-md-13 control-label">家庭住址</label>
+											<div class="col-md-14">
+												<!--<input type="text" name="homeAddr" class="form-control">-->
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" name="homeAddr" readonly>
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-default" type="button" onclick="showAddr('homeAddr')" style="width: 30px;height: 35px;padding-left: 0px;padding-right: 0px;font-size: 15px;padding-bottom: 4px;padding-top: 4px;">
+                                                            修改
+                                                        </button>
+                                                    </span>
+                                                </div>
+											</div>
+										</div>
+                                        <div class="form-group" id="homeAddr" style="display:none">
+											<label class="col-md-13 control-label"></label>
+											<div class="col-md-2" style="margin-left:padding-left:0;padding-right:0;width:97px"  >
+                                                <select class="form-control" name="province_h" id="province_h"></select>
+                                            </div>
+                                            <div class="col-md-2" style="padding-left:0;padding-right:0;width:82px" >
+                                                <select class="form-control" name="city_h" id="city_h"></select>
+                                            </div>
+                                            <div class="col-md-2" style="padding-left:0;padding-right:0;width:82px" >
+                                                <select class="form-control" name="county_h" id="county_h"></select>
+                                            </div>
+                                            <div class="col-md-2" style="padding-left:15px;padding-right:15px;width:300px" >
+                                                <input type="text" class="form-control" name="detail_h" id="detail_h">
+                                            </div>
+										</div>
+
+                                        <div class="form-group">
+											<label class="col-md-13 control-label">籍贯</label>
+											<div class="col-md-14">
+												<div class="input-group">
+                                                    <input type="text" class="form-control" name="birthAddr" readonly>
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-default" type="button" onclick="showAddr('birthAddr')" style="width: 30px;height: 35px;padding-left: 0px;padding-right: 0px;font-size: 15px;padding-bottom: 4px;padding-top: 4px;">
+                                                            修改
+                                                        </button>
+                                                    </span>
+											    </div>
+										    </div>
+                                        </div>
+										<div class="form-group" id="birthAddr" style="display:none">
+											<label class="col-md-13 control-label"></label>
+											<div class="col-md-2" style="margin-left:padding-left:0;padding-right:0;width:97px"  >
+                                                <select class="form-control" name="province" id="province"></select>
+                                            </div>
+                                            <div class="col-md-2" style="padding-left:0;padding-right:0;width:82px" >
+                                                <select class="form-control" name="city" id="city"></select>
+                                            </div>
+                                            <div class="col-md-2" style="padding-left:0;padding-right:0;width:82px" >
+                                                <select class="form-control" name="county" id="county"></select>
+                                            </div>
+										</div>
+										<div class="form-group">
+											<label class="col-md-13 control-label">经常活动地址</label>
+											<div class="col-md-14">
+												<input type="text" name="activityAddr1" class="form-control">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-md-13 control-label">经常活动地址</label>
+											<div class="col-md-14">
+												<input type="text" name="activityAddr2" class="form-control">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-md-13 control-label">最大活动半径</label>
+											<div class="col-md-14">
+												<input type="text" name="actionAddr" class="form-control" readonly>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-md-13 control-label">固定电话</label>
+											<div class="col-md-14">
+												<input type="text" name="telephone" class="form-control" oninput="checkptele()">
+											</div>
+											<div class="ptelestatus"></div>
+										</div>
+										<div class="form-group">
+											<label class="col-md-13 control-label">手机</label>
+											<div class="col-md-14">
+												<input type="text" name="cellphone" class="form-control" placeholder="cellphone" oninput="checkpcell()">
+											</div>
+											<div class="pcellstatus"></div>
+										</div>
+										<div class="form-group">
+											<label class="col-md-13 control-label">同住人联系方式</label>
+											<div class="col-md-14">
+												<input type="text" name="partnerPhone" class="form-control">
+											</div>
+										</div>
+                                        <div class="form-group">
+											<label class="col-md-13 control-label">医疗支付方式</label>
+                                            <div class="col-md-14">
+												<select class="form-control" name="payment">
+                                                    <option value="1">城镇居民基本保险</option>
+                                                    <option value="2">城镇职工基本保险</option>
+                                                    <option value="3">新型农村合作医疗</option>
+                                                    <option value="4">商业医疗保险</option>
+                                                    <option value="5">全公费</option>
+                                                    <option value="6">全自费</option>
+                                                    <option value="7">其他</option>
+                                              </select>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="col-md-13 control-label">舒张压</label>
+											<div class="col-md-14">
+												<input type="text" name="diastolicPressure" class="form-control">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-md-13 control-label">收缩压</label>
+											<div class="col-md-14">
+												<input type="text" name="systolicPressure" class="form-control">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-md-13 control-label">颈围</label>
+											<div class="col-md-14">
+												<input type="text" name="neckCircu" class="form-control" data-toggle="tooltip" data-placement="top" title="指经喉结节点的颈部水平围长">
+												<span class="help-block">指经喉结节点的颈部水平围长</span>
+											</div>
+										</div>
+
+                                     </div>
+                                     </div>
+									</div>
+								</span>
+                            </form>
+
+							<div class="pagnation" id="pagnation">
+										<a onclick="show1()" class="page-prev">上一页</a>
+										<!--<a onclick="show1()" class="current">1</a>-->
+										<!--<a onclick="show2()">2</a>-->
+										<a onclick="show2()" class="page-next">下一页</a>
+									</div>
+							<div class="pull-right" style="margin-right:50px;">
+                                        <button type="button" id="submitPatientInfobt" class="btn btn-primary">保存</button>
+                                    </div>
+							<div id="msg-error" class="alert alert-warning alert-dismissable" style="display: none;">
+            					<button type="button" class="close" id="error-close" aria-hidden="true">&times;</button>
+            					<h4><i class="icon fa fa-warning"></i> 出错了!</h4>
+            					<p id="msg-error-p"></p>
+        					</div>
+                        </div>
+
+                    </div>
+			   		</div>
+
+			   	</li>
+			  	</ul>
+		  	</div>
+		</aside>
+
+
+
+
+
+
+	</div><!-- END container-wrap -->
+
+
+	</div>
+
+<!--	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+	</div>-->
+
+	<!-- jQuery -->
+	<script src="/static/test/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="/static/test/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="/static/test/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="/static/test/js/jquery.waypoints.min.js"></script>
+	<!-- Flexslider -->
+	<script src="/static/test/js/jquery.flexslider-min.js"></script>
+	<!-- Magnific Popup -->
+	<script src="/static/test/js/jquery.magnific-popup.min.js"></script>
+	<script src="/static/test/js/magnific-popup-options.js"></script>
+	<!-- Counters -->
+	<script src="/static/test/js/jquery.countTo.js"></script>
+	<!-- Main -->
+	<script src="/static/test/js/main.js"></script>
+
+
+		<!-- start: JavaScript-->
+
+		<script src="/static/plugins/dropzone/js/dropzone.min.js"></script>
+
+		<!-- Theme JS -->
+		<script src="/static/js/jquery.mmenu.min.js"></script>
+		<script src="/static/js/core.min.js"></script>
+
+
+		<script src="/static/plugins/jquery-ui/js/jquery-ui-1.10.4.min.js"></script>
+		<script src="/static/plugins/moment/js/moment.min.js"></script>
+		<script src="/static/plugins/fullcalendar/js/fullcalendar.min.js"></script>
+		<script src="/static/plugins/chosen/js/chosen.jquery.min.js"></script>
+		<script src="/static/plugins/autosize/jquery.autosize.min.js"></script>
+		<script src="/static/plugins/placeholder/js/jquery.placeholder.min.js"></script>
+		<script src="/static/plugins/wizard/js/jquery.bootstrap.wizard.min.js"></script>
+		<script src="/static/plugins/maskedinput/js/jquery.maskedinput.js"></script>
+		<script src="/static/js/pages/form-wizard.js"></script>
+
+
+		<script src="/static/vendor/skycons/js/skycons.js"></script>
+
+		<script src="/static/js/globalize.min.js"></script>
+		<script src="/static/js/dx.chartjs.js"></script>
+		<script src="/static/js/echarts.min.js"></script>
+		<script src="/static/plugins/moment/js/moment.min.js"></script>
+		<script src="/static/plugins/fullcalendar/js/fullcalendar.min.js"></script>
+
+		<!-- Pages JS -->
+        <script src="/static/js/pages/tools.js"></script>
+		<!--<script type="text/javascript" src="/static/js/pages/main.js"></script>-->
+
+
+        <script src="/static/js/pages/AEType.js"></script>
+        <script src="/static/js/pages/areaSelect.js"></script>
+        <script src="/static/js/pages/patientDetailDet.js"></script>
+		<script src="/static/js/pages/patientDetail.js"></script>
+
+
+		<script src="/static/js/pages/skinManage.js"></script>
+		<!-- end: JavaScript-->
+
+	</body>
+</html>

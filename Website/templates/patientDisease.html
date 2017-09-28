@@ -1,0 +1,236 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>疾病信息</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
+	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+
+
+	<link href="https://fonts.googleapis.com/css?family=Oxygen:300,400" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="/static/test/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="/static/test/css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="/static/test/css/bootstrap.css">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="/static/test/css/magnific-popup.css">
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="/static/test/css/flexslider.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="/static/test/css/style1.css">
+
+	<!-- Modernizr JS -->
+	<script src="/static/test/js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="/static/test/js/respond.min.js"></script>
+	<![endif]-->
+
+        <!-- Vendor CSS-->
+		<link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="/static/vendor/skycons/css/skycons.css" rel="stylesheet" />
+		<link href="/static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
+		<!-- Plugins CSS-->
+		<link href="/static/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css" rel="stylesheet" />
+
+
+		<link href="/static/plugins/dropzone/css/dropzone.css" rel="stylesheet" />
+
+		<!-- Theme CSS -->
+		<!--<link href="/static/css/jquery.mmenu.css" rel="stylesheet" />-->
+
+		<!-- Page CSS -->
+		<link href="/static/css/style.css" rel="stylesheet" />
+		<link href="/static/css/add-ons.min.css" rel="stylesheet" />
+
+		<!-- end: CSS file-->
+
+        <link href="/static/css/mycss1.css" rel="stylesheet" />
+		<link href="/static/css/mycss.css" rel="stylesheet" />
+
+	<link rel="stylesheet" href="/static/test/css/newcss.css">
+
+	</head>
+	<body>
+
+	<div class="fh5co-loader"></div>
+	<div>
+
+
+	<nav class="fh5co-nav" role="navigation">
+		<div class="container-wrap">
+			<div class="top-menu" style="position:fixed;z-index:999;background-color:#ffffff;max-height:40px;padding:0;">
+				<div class="row" >
+					<div>
+						<div style="max-width:1060px;margin:0 auto;">
+							<ol class="breadcrumb" style="margin-bottom:0;display:block">
+								<li><i class="sidebarCon hideclick fa fa-th-list" onclick="sidebarControl()"></i></li>
+								<li class="active"><a class="pName">IBreathCare</a></li>
+							</ol>
+						</div>
+					</div>
+
+					<div class="col-xs-10 text-right menu-1">
+						<ul>
+							<li><a href="/patientDetail/" class="patientDet">患者详情</a></li>
+							<li><a href="/patientDisease/" class="patientDis">疾病信息</a></li>
+							<li><a href="/patientRelation/" class="patientRel">家属信息</a></li>
+							<li onclick="showAll('1')"><a href="/patientFollowUp/" class="patientFol">随访记录</a></li>
+							<li onclick="showAPP()"><a href="/patientAPPinfo/" class="patientAPP">APP数据</a></li>
+						</ul>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</nav>
+
+	<div class="container-wrap" style="width:1060px;">
+		<aside id="fh5co-hero">
+			<div class="flexslider">
+				<ul class="slides">
+			   	<li style="background:#FFFCC;">
+			   		<div class="overlay-gradient"></div>
+		   			<div>
+						<div class="mysidebar"> <!--style="background:#33FF99;width:15%;height:800px;float:left;"--> <!--HuZY-->
+							<div class="panel-body text-center" style="padding:30px">
+								<div class="bk-avatar" style="width:100px;height:100px">
+									<img src="/static/img/avatar.jpg" class="img-circle bk-img-60" alt="">
+								</div>
+								<div class="bk-padding-top-10">
+									<i class="fa fa-circle text-success"></i><small class="pName" style="font-size:15px;"></small>
+								</div>
+							</div>
+
+							<ul>
+								<li><i class="fa fa-caret-square-o-up" aria-hidden="true" style="margin-right:9px;font-size:18px"></i><a href="/patientDetail/" class="patientDet" style="font-size: 18px;color:white">患者详情</a></li>
+							 	<li><i class="fa fa-file-o" aria-hidden="true" style="margin-right:9px;font-size:18px"></i><a href="/patientDisease/" class="patientDis" style="font-size: 18px;color:white">疾病信息</a></li>
+							 	<li><i class="fa fa-list-alt" aria-hidden="true" style="margin-right:7px;font-size:18px"></i><a href="/patientRelation/" class="patientRel" style="font-size: 18px;color:white">家属信息</a></li>
+							 	<li onclick="showAll('1')"><i class="fa fa-ambulance" aria-hidden="true" style="margin-right:7px;font-size:18px"></i><a href="/patientFollowUp/" class="patientFol" style="font-size: 18px;color:white">随访记录</a></li>
+							 	<li onclick="showAPP()"><i class="fa fa-th-large" aria-hidden="true" style="margin-right:11px;font-size:18px"></i><a href="/patientAPPinfo/" class="patientAPP" style="font-size: 18px;color:white">APP数据</a></li>
+							</ul>
+						</div>
+                    	<div class="mycontent"><!--style="background:white;width:85%;margin-left:15%;"--><!--HuZY-->
+							<div>
+								<div class="panel-heading bk-bg-primary" style="padding:10px;margin:0 2px;">
+                                    <h4 style="font-size: 20px;margin:0;"><i class="fa fa-table red"style="margin-right:8px;"></i><span class="break"></span>疾病信息</h4>
+                                </div>
+								<div class="myDiseasePanel" style="margin-left:5%;margin-top:2%;">
+								<form class="form-horizontal" id = "DiseaseType" method = "post" role="form">
+									{% csrf_token %}
+								<div id="showAllDisease">
+
+								</div>
+								</form>
+								<div id="addDisease" style="padding:5px 20px;">
+									<div class="form-group">
+										<button class="btn-default" type="button" onclick="showAddr('addDisPanel')" style="border-radius:50%;color:#66D37E;">
+											<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+										</button>
+									</div>
+								</div>
+								<form class="form-horizontal" id = "DiseaseType2" method = "post" role="form">
+									{% csrf_token %}
+								<div id="addDisPanel" style="display:none;border:2px solid #66D37E;margin:0 5px 10px;padding:10px;width:70%;border-radius:5px;">
+									<div id="mynewDiv" style="margin:5px 0;"></div>
+									<div class="addDisease" style="margin:5px 0;">
+										<button class="btn-default" type="button" onclick="showAddr('mysubDiv')">添加二级诊断</button>
+										<!--<div class="rpl_btn" onclick="showAddr('mysubDiv')">添加二级诊断</div>-->
+									</div>
+									<div id="mysubDiv" style="display:none;margin:5px 0;"></div>
+									<div style="margin:5px 0;"><button class="btn-default" type="button" onclick="submitDisease2()">保存</button></div>
+								</div>
+								</form>
+
+								</div>
+							</div>
+						</div>
+			   		</div>
+
+			   	</li>
+			  	</ul>
+		  	</div>
+		</aside>
+
+	</div><!-- END container-wrap -->
+
+
+	</div>
+
+	<!--<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+	</div>-->
+
+	<!-- jQuery -->
+	<script src="/static/test/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="/static/test/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="/static/test/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="/static/test/js/jquery.waypoints.min.js"></script>
+	<!-- Flexslider -->
+	<script src="/static/test/js/jquery.flexslider-min.js"></script>
+	<!-- Magnific Popup -->
+	<script src="/static/test/js/jquery.magnific-popup.min.js"></script>
+	<script src="/static/test/js/magnific-popup-options.js"></script>
+	<!-- Counters -->
+	<script src="/static/test/js/jquery.countTo.js"></script>
+	<!-- Main -->
+	<script src="/static/test/js/main.js"></script>
+
+
+		<!-- start: JavaScript-->
+
+		<script src="/static/plugins/dropzone/js/dropzone.min.js"></script>
+
+		<!-- Theme JS -->
+		<script src="/static/js/jquery.mmenu.min.js"></script>
+		<script src="/static/js/core.min.js"></script>
+
+
+		<script src="/static/plugins/jquery-ui/js/jquery-ui-1.10.4.min.js"></script>
+		<script src="/static/plugins/moment/js/moment.min.js"></script>
+		<script src="/static/plugins/fullcalendar/js/fullcalendar.min.js"></script>
+		<script src="/static/plugins/chosen/js/chosen.jquery.min.js"></script>
+		<script src="/static/plugins/autosize/jquery.autosize.min.js"></script>
+		<script src="/static/plugins/placeholder/js/jquery.placeholder.min.js"></script>
+		<script src="/static/plugins/wizard/js/jquery.bootstrap.wizard.min.js"></script>
+		<script src="/static/plugins/maskedinput/js/jquery.maskedinput.js"></script>
+		<script src="/static/js/pages/form-wizard.js"></script>
+
+
+		<script src="/static/vendor/skycons/js/skycons.js"></script>
+
+		<script src="/static/js/globalize.min.js"></script>
+		<script src="/static/js/dx.chartjs.js"></script>
+		<script src="/static/js/echarts.min.js"></script>
+		<script src="/static/plugins/moment/js/moment.min.js"></script>
+		<script src="/static/plugins/fullcalendar/js/fullcalendar.min.js"></script>
+
+		<!-- Pages JS -->
+        <script src="/static/js/pages/tools.js"></script>
+		<!--<script type="text/javascript" src="/static/js/pages/main.js"></script>-->
+
+
+		<script src="/static/js/pages/typeSelect.js"></script>
+        <script src="/static/js/pages/patientDetail.js"></script>
+		<script src="/static/js/pages/patientDetailDis.js"></script>
+
+		<script src="/static/js/pages/skinManage.js"></script>
+
+		<!-- end: JavaScript-->
+
+	</body>
+</html>
